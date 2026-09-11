@@ -8,17 +8,7 @@ export const metadata = {
   },
 };
 
-const AvatarSilhouette = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={className}>
-    <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10z" fill="currentColor"/>
-    <path d="M4 21v-1a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v1" fill="currentColor"/>
-  </svg>
-);
-
 export default function AboutPage() {
-  const miniAvatars = Array(6).fill({ name: "Name", role: "Designation" });
-  const bottomAvatars = Array(6).fill({ name: "Name", role: "Designation" });
-
   return (
     <div id="page-about" className="page active">
       <div className="inner-header">
@@ -28,30 +18,20 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <section className="section-white-padding" style={{ paddingBottom: "2rem" }}>
+      <section className="section-white-padding" style={{ paddingBottom: "4rem" }}>
         <div className="container">
           <div className="two-col" style={{ alignItems: "stretch" }}>
-            {/* Left Column: Leadership Card */}
-            <div className="about-lead-card">
-              <Users size={32} style={{ color: "var(--wine-dark)", margin: "0 auto 0.5rem" }} />
-              <h3 className="about-lead-card-title">Leadership Team</h3>
-              <p className="about-lead-card-sub">Executive Profiles Coming Soon</p>
-              <div className="about-lead-card-line"></div>
+            {/* Left Column: Corporate Overview Card */}
+            <div className="about-lead-card" style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <Users size={36} style={{ color: "var(--wine-dark)", margin: "0 auto 1rem" }} />
+              <h3 className="about-lead-card-title">Leadership &amp; Governance</h3>
+              <p className="about-lead-card-sub" style={{ textTransform: "uppercase", letterSpacing: "0.08em", fontSize: "0.8rem", fontWeight: "700", color: "var(--wine-mid)" }}>
+                Executive Steering Committee
+              </p>
+              <div className="about-lead-card-line" style={{ margin: "1rem auto 1.5rem" }}></div>
 
-              <div className="about-lead-mini-row">
-                {miniAvatars.map((avatar, idx) => (
-                  <div className="lead-mini-item" key={idx}>
-                    <div className="lead-mini-avatar-wrapper">
-                      <AvatarSilhouette className="w-full h-full text-slate-400" />
-                    </div>
-                    <div className="lead-mini-name">{avatar.name}</div>
-                    <div className="lead-mini-role">{avatar.role}</div>
-                  </div>
-                ))}
-              </div>
-
-              <p className="about-lead-card-caption">
-                Our leadership team brings together decades of experience across global trade, mining, chemicals, logistics, and agro-industrial sectors.
+              <p className="about-lead-card-caption" style={{ borderTop: "none", paddingTop: 0, fontSize: "0.95rem", lineHeight: "1.75" }}>
+                Our leadership team brings together decades of hands-on commercial experience across global commodity trading, mining chemicals, non-ferrous metals, international maritime logistics, and agro-industrial distribution.
               </p>
             </div>
 
@@ -63,7 +43,7 @@ export default function AboutPage() {
               <div className="divider" style={{ width: "60px", height: "3px", background: "var(--wine-dark)", marginBottom: "1.5rem" }}></div>
               
               <p className="paragraph-spacing-heavy" style={{ fontSize: "0.95rem", color: "var(--charcoal)", lineHeight: "1.65", marginBottom: "1.25rem" }}>
-                Crestline Global FZC LLC is guided by a multidisciplinary leadership team with experience across international trade, mining chemicals, mineral commodities, logistics, procurement, finance, and agricultural distribution.
+                Crestline Global FZC LLC is guided by a multidisciplinary executive team operating across international trade, mining chemicals, mineral commodities, logistics, procurement, finance, and agricultural distribution.
               </p>
               <p className="paragraph-spacing-heavy" style={{ fontSize: "0.95rem", color: "var(--charcoal)", lineHeight: "1.65", marginBottom: "2rem" }}>
                 Operating from the United Arab Emirates and serving markets globally, our management team combines regional market knowledge with global commercial networks to deliver reliable supply chain solutions.
@@ -121,24 +101,6 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Bottom Section: Meet Our Leadership Team */}
-      <section className="meet-leader-section">
-        <div className="container">
-          <div className="meet-leader-title">Meet Our Leadership Team</div>
-          <div className="meet-leader-grid">
-            {bottomAvatars.map((member, idx) => (
-              <div className="leader-member-card" key={idx}>
-                <div className="leader-avatar-wrapper">
-                  <AvatarSilhouette className="w-full h-full text-slate-400" />
-                </div>
-                <div className="leader-member-name">{member.name}</div>
-                <div className="leader-member-role">{member.role}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
