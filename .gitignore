@@ -1,0 +1,47 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+
+# Next.js Build Outputs & Static Exports
+/.next/
+/out/
+/build/
+
+# Testing & Coverage
+/coverage/
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# Logs & Debugging
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# System & OS Files
+.DS_Store
+*.pem
+Thumbs.db
+
+# Vercel Deployment Settings
+.vercel
+
+# TypeScript & Cache
+*.tsbuildinfo
+next-env.d.ts
+.turbo
+
+# Temporary Development Files, Feedback Screenshots & Archives
+*.zip
+/app-fixed
+/artifact
+/Images
+HighLevelPlan.md
