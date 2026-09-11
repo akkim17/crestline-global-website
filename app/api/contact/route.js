@@ -39,8 +39,8 @@ export async function POST(req) {
     // Send email using Resend
     // Note: The Resend free tier sandbox domain requires 'from' to be onboarding@resend.dev unless a custom domain is verified.
     const data = await resend.emails.send({
-      from: 'Crestline Global Inbound Inquiries <onboarding@resend.dev>',
-      to: 'info@crestlineglobal.com',
+      from: 'Crestline Inquiries <inbound@crestlineglobalfzc.com>',
+      to: 'info@crestlineglobalfzc.com',
       subject: `New Commercial Intake: ${interest}`,
       replyTo: email,
       html: `

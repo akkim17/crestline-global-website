@@ -7,6 +7,6 @@ export default function robots() {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://crestlineglobalfzc.com/sitemap.xml",
+    sitemap: "https://www.crestlineglobalfzc.com/sitemap.xml",
   };
 }

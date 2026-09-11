@@ -1,7 +1,7 @@
 export const dynamic = "force-static";
 
 export default function sitemap() {
-  const baseUrl = "https://crestlineglobalfzc.com";
+  const baseUrl = "https://www.crestlineglobalfzc.com";
 
   return [
     {
