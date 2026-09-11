@@ -57,8 +57,14 @@ export default function ContactForm() {
       if (response.ok) {
         setStatus("success");
       } else {
-        const errorData = await response.json();
-        throw new Error(errorData.error || "Server returned submission errors");
+        let errorText = "Unable to process intake at this time. Please try again.";
+        try {
+          const errorData = await response.json();
+          if (errorData && errorData.error) errorText = errorData.error;
+        } catch {
+          // Response was not JSON (e.g. server error page)
+        }
+        throw new Error(errorText);
       }
     } catch (err) {
       console.error("Error submitting contact form:", err);
