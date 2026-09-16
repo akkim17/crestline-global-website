@@ -1,13 +1,12 @@
-import Link from "next/link";
 import {
   Leaf,
   Wheat,
   Droplet,
   FlaskConical,
   Sprout,
-  Tractor,
+  PackageCheck,
   TrendingUp,
-  ArrowRight
+  Download
 } from "lucide-react";
 
 export const metadata = {
@@ -35,27 +34,32 @@ export default function AgroSolutionsPage() {
     {
       title: "Bio Capsules & Inputs",
       desc: "Advanced biological inputs that enhance soil health and yield.",
+      highlight: "Free from synthetic & chemicals",
       icon: <FlaskConical size={28} />
     },
     {
       title: "Soil Health Optimization",
       desc: "Solutions for soil regeneration and nutrient enrichment.",
+      highlight: "Upto 1 Trillion Microbes Per Capsule",
       icon: <Sprout size={28} />
     },
     {
       title: "Water Use Efficiency",
       desc: "Technologies that maximize water utilization.",
+      highlight: "100% Water Soluble",
       icon: <Droplet size={28} />
     },
     {
       title: "Crop Productivity Solutions",
       desc: "Proven solutions to increase yield and quality sustainably.",
+      highlight: null,
       icon: <Wheat size={28} />
     },
     {
-      title: "Supporting Farmers",
-      desc: "Empowering farmers with knowledge, tools and support.",
-      icon: <Tractor size={28} />
+      title: "Lower Logistics Cost",
+      desc: "The capsule packaging delivers a seasonal consignment in a small parcel versus conventional powder or liquid formula.",
+      highlight: null,
+      icon: <PackageCheck size={28} />
     }
   ];
 
@@ -110,14 +114,20 @@ export default function AgroSolutionsPage() {
                     <TrendingUp size={15} />
                   </div>
                   <div className="agro-bullet-text">
-                    <span>Built specifically</span> to scale up raw agricultural volume output metrics securely.
+                    <span>Built specifically</span> to scale up raw agricultural volume output metrics securely, and suited for multi-crop applicability with 8 different SKUs.
                   </div>
                 </div>
               </div>
 
-              <Link href="/contact" className="agro-capsule-btn">
-                Learn More About SRT Biotechnology <ArrowRight size={14} />
-              </Link>
+              <a
+                href="/srt-bio-capsules-overview.pdf"
+                download="SRT-Bio-Capsules-Product-Overview.pdf"
+                className="agro-capsule-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download Product Overview (PDF) <Download size={15} />
+              </a>
             </div>
 
             {/* Right Column: Key Offerings & Bottom Farmhouse Banner (70%) */}
@@ -138,6 +148,11 @@ export default function AgroSolutionsPage() {
                     </div>
                     <h4>{solution.title}</h4>
                     <p>{solution.desc}</p>
+                    {solution.highlight && (
+                      <div className="agro-card-highlight">
+                        {solution.highlight}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
