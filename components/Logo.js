@@ -7,10 +7,10 @@ export default function Logo({ onClick, variant }) {
     <Link href="/" className="crestline-logo-container" onClick={onClick}>
       <div className={`logo-emblem-wrapper ${isFooter ? "footer-logo" : ""}`}>
         <Image
-          src="/logo.png"
+          src="/logo-emblem.png"
           alt="Crestline Global Emblem"
-          width={80}
-          height={80}
+          width={44}
+          height={44}
           priority
         />
       </div>

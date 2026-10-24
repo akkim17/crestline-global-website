@@ -165,12 +165,13 @@ export default function ContactForm() {
           <div className="contact-form-group">
             <label htmlFor="phone">Phone Number <span>*</span></label>
             <input
-              type="text"
+              type="tel"
               id="phone"
               value={formData.phone}
               onChange={handleChange}
               required
-              placeholder="+971 50 123 4567"
+              autoComplete="tel"
+              placeholder="+971 5X XXX XXXX"
             />
           </div>
         </div>

@@ -24,7 +24,7 @@ export default function ChemicalsPage() {
 
           <div className="chemicals-grid">
             <div className="chem-card">
-              <div className="chem-formula">NH₄NO₃</div>
+              <div className="chem-formula">NH<sub>4</sub>NO<sub>3</sub></div>
               <div className="chem-name">Ammonium Nitrate</div>
               <p className="chem-desc">
                 Porous prill optimization engineered directly for commercial mining explosive matrix compounds.

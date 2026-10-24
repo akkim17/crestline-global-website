@@ -29,35 +29,35 @@ export default function MineralsCopperPage() {
       desc: "Cathodes, Concentrates, and Scrap",
       bgColor: "#C26D48",
       icon: <Coins size={18} style={{ color: "#C26D48" }} />,
-      photo: "/Copper.png"
+      photo: "/Copper.webp"
     },
     {
       title: "Gold",
       desc: "Concentrates and Dore",
       bgColor: "#0A2540",
       icon: <Sparkles size={18} style={{ color: "#0A2540" }} />,
-      photo: "/Gold.png"
+      photo: "/Gold.webp"
     },
     {
       title: "Graphite",
       desc: "Flake and High-Purity Concentrates",
       bgColor: "#1A5F7A",
       icon: <Layers size={18} style={{ color: "#1A5F7A" }} />,
-      photo: "/Cobalt.png"
+      photo: "/Cobalt.webp"
     },
     {
       title: "Bauxite",
       desc: "Metallurgical Grade Ore",
       bgColor: "#4E1A29",
       icon: <Settings size={18} style={{ color: "#4E1A29" }} />,
-      photo: "/Manganese.png"
+      photo: "/Manganese.webp"
     },
     {
       title: "Iron Ore",
       desc: "High-Grade Fines & Concentrates",
       bgColor: "#2D3748",
       icon: <ShieldCheck size={18} style={{ color: "#2D3748" }} />,
-      photo: "/Chromite.png"
+      photo: "/Chromite.webp"
     }
   ];
 

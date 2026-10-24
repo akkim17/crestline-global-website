@@ -1,3 +1,5 @@
+import { site } from "@/lib/site";
+
 export const dynamic = "force-static";
 
 export default function robots() {
@@ -7,6 +9,6 @@ export default function robots() {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://www.crestlineglobalfzc.com/sitemap.xml",
+    sitemap: `${site.url}/sitemap.xml`,
   };
 }

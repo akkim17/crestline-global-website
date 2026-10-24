@@ -16,7 +16,7 @@ import {
 
 export const metadata = {
   title: "UAE Commodity Trading & Logistics Network | Crestline Global FZC LLC",
-  description: "Crestline Global FZC LLC connects global producers and Middle East / Dubai buyers across Mining Chemicals, Grade A 99.99% Copper Cathodes, NPK Agro Solutions, and Trade Logistics.",
+  description: "Crestline Global FZC LLC connects global producers and Middle East / Dubai buyers across Mining Chemicals, Grade A 99.99% Copper Cathodes, Agro Solutions (SRT Bio Capsules), and Trade Logistics.",
   alternates: {
     canonical: "/",
   },
@@ -193,7 +193,7 @@ export default function Home() {
       <section id="about-section">
         <div className="container">
           <div className="about-grid">
-            <div className="about-visual reveal-left" style={{ backgroundImage: "url('/crestline-hero.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
+            <div className="about-visual reveal-left" style={{ backgroundImage: "url('/crestline-hero.webp')", backgroundSize: "cover", backgroundPosition: "center" }}>
               <div className="about-card-deco">
                 <h3>CRESTLINE</h3>
                 <p className="deco-brand-sub">Resource Integrity</p>
@@ -241,14 +241,14 @@ export default function Home() {
                   <p className="segment-card-desc">Registered allocation pipeline delivering wholesale Ammonium Nitrate porous prill, Sodium Cyanide briquettes, and granular high-absorption Activated Carbon elements to major operational sites.</p>
                 </div>
                 <div className="segment-card-pills">
-                  <span className="segment-pill">NH4NO3</span>
+                  <span className="segment-pill">NH<sub>4</sub>NO<sub>3</sub></span>
                   <span className="segment-pill warning-pill">
                     <AlertTriangle size={13} strokeWidth={2.5} style={{ marginRight: "2px" }} />
                     NaCN, C
                   </span>
                 </div>
               </div>
-              <div className="segment-card-image" style={{ backgroundImage: "url('/Chemical.png')" }}></div>
+              <div className="segment-card-image" style={{ backgroundImage: "url('/Chemical.webp')" }}></div>
             </Link>
 
             <Link href="/minerals-copper" className="segment-card reveal">
@@ -274,7 +274,7 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-              <div className="segment-card-image" style={{ backgroundImage: "url('/Copper.png')" }}></div>
+              <div className="segment-card-image" style={{ backgroundImage: "url('/Copper.webp')" }}></div>
             </Link>
 
             <Link href="/agro" className="segment-card reveal">
@@ -300,7 +300,7 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-              <div className="segment-card-image" style={{ backgroundImage: "url('/Agro.png')" }}></div>
+              <div className="segment-card-image" style={{ backgroundImage: "url('/Agro.webp')" }}></div>
             </Link>
 
             <Link href="/trade-services" className="segment-card reveal">
@@ -326,7 +326,7 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-              <div className="segment-card-image" style={{ backgroundImage: "url('/Handshake.jpg')" }}></div>
+              <div className="segment-card-image" style={{ backgroundImage: "url('/Handshake.webp')" }}></div>
             </Link>
           </div>
 

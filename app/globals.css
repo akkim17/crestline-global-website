@@ -202,201 +202,6 @@ body::before {
     top: 0;
     left: 0;
     right: 0;
-    --pink-bg: #FAFBFD;          /* Pristine Slate Gray-White */
-    --pink-light: #F0F4F8;       /* Light blue-slate background */
-    --pink-card: #FFFFFF;
-    --wine-dark: #061C37;        /* Deep Navy Blue */
-    --wine-mid: #0B5CA8;         /* Metallic Electric Blue */
-    --wine-light: #1C7CD6;       /* Light Electric Blue */
-    --copper: #B58E38;           /* Warm Gold / Copper Highlight */
-    --copper-light: #D4B26F;     /* Lighter Gold */
-    --copper-glow: rgba(181, 142, 56, 0.12);
-    --gold: #B58E38;
-    --gold-light: #D4B26F;
-    --charcoal: #2D3139;         /* Slate dark charcoal */
-    --muted-gray: #7A808C;
-    --white: #FFFFFF;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-    font-size: 17.5px; /* Old value: 16px */
-}
-
-
-body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.6;
-}
-
-::-webkit-scrollbar {
-    width: 5px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--pink-bg);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--wine-mid);
-    border-radius: 4px;
-}
-
-.container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.section-label {
-    font-family: var(--heading-font);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--wine-mid);
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-}
-
-.section-label::before {
-    content: '';
-    display: block;
-    width: 2rem;
-    height: 2px;
-    background: var(--wine-mid);
-}
-
-.section-title {
-    font-family: var(--display-font);
-    font-size: clamp(2rem, 3.8vw, 3.25rem);
-    line-height: 0.95;
-    letter-spacing: 0.01em;
-    color: var(--wine-dark);
-}
-
-.section-title .accent {
-    color: var(--copper);
-}
-
-.section-subtitle {
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: var(--charcoal);
-    line-height: 1.7;
-    max-width: 60ch;
-}
-
-.btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.625rem;
-    background: var(--wine-mid);
-    color: var(--white);
-    font-family: var(--heading-font);
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.875rem 2.25rem;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
-    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
-}
-
-.btn-primary:hover {
-    background: var(--wine-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(92, 19, 34, 0.25);
-}
-
-.btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.625rem;
-    background: transparent;
-    color: var(--wine-mid);
-    font-family: var(--heading-font);
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.875rem 2.25rem;
-    border: 2px solid var(--wine-mid);
-    text-decoration: none;
-    transition: all 0.25s;
-    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
-}
-
-.btn-secondary:hover {
-    border-color: var(--wine-dark);
-    color: var(--white);
-    background: var(--wine-mid);
-}
-
-.divider {
-    width: 4rem;
-    height: 3px;
-    background: linear-gradient(90deg, var(--wine-mid), transparent);
-    margin: 1.5rem 0;
-}
-
-/* ===== REVEAL RENDERS ===== */
-.reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.reveal.in-view {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.reveal-left {
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.reveal-left.in-view {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.reveal-right {
-    opacity: 0;
-    transform: translateX(30px);
-    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.reveal-right.in-view {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-#nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     z-index: 1000;
     padding: 1.5rem 0;
     transition: background 0.35s, padding 0.35s, box-shadow 0.35s;
@@ -440,13 +245,9 @@ body::before {
 }
 
 .logo-emblem-wrapper img {
-    position: absolute;
-    top: -2px;
-    left: 0;
-    width: 44px !important;
-    height: auto !important;
-    transform: scale(1.24);
-    transform-origin: top center;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .logo-emblem-wrapper.footer-logo {
@@ -674,7 +475,7 @@ body::before {
 .hero-right-column {
     position: relative;
     min-height: 100%;
-    background-image: url('/Banner.png');
+    background-image: url('/Banner.webp');
     background-size: cover;
     background-position: 72% center;
     background-repeat: no-repeat;
@@ -702,7 +503,7 @@ body::before {
     bottom: -10px;
     width: 500px;
     height: 380px;
-    background-image: url('/Banner.png');
+    background-image: url('/Banner.webp');
     background-size: cover;
     background-position: 5% bottom;
     background-repeat: no-repeat;
@@ -1035,34 +836,9 @@ body::before {
 }
 
 @media (max-width: 991px) {
-    #hero {
-        background-size: cover;
-        background-position: center;
-    }
-    #hero::before {
-        background: linear-gradient(90deg, 
-            var(--pink-bg) 0%, 
-            var(--pink-bg) 60%, 
-            rgba(255, 246, 246, 0.95) 100%
-        );
-    }
     .bottom-bar-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.25rem;
-    }
-}
-
-@media (max-width: 767px) {
-    #hero {
-        background-image: none; /* Hide background image on small devices for readability */
-        padding-top: 8rem;
-    }
-    #hero::before {
-        background: var(--pink-bg);
-    }
-    .bottom-bar-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
 }
 
@@ -1575,7 +1351,7 @@ body::before {
 .cta-band {
     position: relative;
     background-color: #F6F8FA;
-    background-image: linear-gradient(to right, rgba(246, 248, 250, 0.95) 50%, rgba(246, 248, 250, 0.25) 100%), url('/Banner.png');
+    background-image: linear-gradient(to right, rgba(246, 248, 250, 0.95) 50%, rgba(246, 248, 250, 0.25) 100%), url('/Banner.webp');
     background-size: cover;
     background-position: right center;
     background-repeat: no-repeat;
@@ -2394,7 +2170,7 @@ footer {
 
 .minerals-theme .inner-header {
     background-color: #F3ECE6 !important;
-    background-image: linear-gradient(to right, rgba(243, 236, 230, 0.95) 45%, rgba(243, 236, 230, 0.3) 100%), url('/Copper.png') !important;
+    background-image: linear-gradient(to right, rgba(243, 236, 230, 0.95) 45%, rgba(243, 236, 230, 0.3) 100%), url('/Copper.webp') !important;
     background-size: cover !important;
     background-position: right center !important;
     border-bottom: 1.5px solid rgba(194, 109, 72, 0.15) !important;
@@ -2710,7 +2486,7 @@ footer {
 
 .agro-theme .inner-header {
     background-color: #E2ECE5 !important;
-    background-image: linear-gradient(to right, rgba(226, 236, 229, 1) 30%, rgba(226, 236, 229, 0) 90%), url('/Agro.jpg') !important;
+    background-image: linear-gradient(to right, rgba(226, 236, 229, 1) 30%, rgba(226, 236, 229, 0) 90%), url('/Agro-header.webp') !important;
     background-size: cover !important;
     background-position: 80% center !important;
     border-bottom: 1.5px solid rgba(46, 125, 50, 0.15) !important;
@@ -2969,10 +2745,10 @@ footer {
 }
 
 .contact-theme #contact-section {
-    background-image: linear-gradient(to right, rgba(250, 251, 249, 0.96) 35%, rgba(250, 251, 249, 0.3) 100%), url('/hero-logistics.png') !important;
+    background-image: linear-gradient(to right, rgba(250, 251, 249, 0.96) 35%, rgba(250, 251, 249, 0.3) 100%), url('/hero-logistics.webp') !important;
     background-size: cover !important;
     background-position: center !important;
-    min-height: calc(100vh - var(--navbar-height));
+    min-height: calc(100vh - 6rem);
     display: flex;
     align-items: center;
     padding: 5rem 0 !important;
@@ -2995,6 +2771,7 @@ footer {
 .contact-theme .container {
     position: relative;
     z-index: 10;
+    width: 100%;
 }
 
 .contact-theme .contact-grid {
@@ -3190,6 +2967,7 @@ footer {
     border: 1.5px solid #E2E8F0;
     border-radius: 6px;
     padding: 0.85rem 1rem;
+    font-family: inherit;
     font-size: 0.88rem;
     color: var(--charcoal);
     outline: none;
@@ -3269,7 +3047,7 @@ footer {
 
 @media (max-width: 991px) {
     .contact-theme #contact-section {
-        background-image: linear-gradient(to bottom, rgba(250, 251, 249, 0.98) 75%, rgba(250, 251, 249, 0.8) 100%), url('/hero-logistics.png') !important;
+        background-image: linear-gradient(to bottom, rgba(250, 251, 249, 0.98) 75%, rgba(250, 251, 249, 0.8) 100%), url('/hero-logistics.webp') !important;
         padding: 4rem 0 !important;
     }
     .contact-theme .contact-grid {
@@ -3347,7 +3125,7 @@ footer {
 /* Mobile responsive CTA Band tweaks */
 @media (max-width: 767px) {
     .cta-band {
-        background-image: linear-gradient(to bottom, rgba(246, 248, 250, 0.97) 60%, rgba(246, 248, 250, 0.85) 100%), url('/Banner.png') !important;
+        background-image: linear-gradient(to bottom, rgba(246, 248, 250, 0.97) 60%, rgba(246, 248, 250, 0.85) 100%), url('/Banner.webp') !important;
         padding: 3rem 0 !important;
     }
     .cta-band-inner {
@@ -3624,5 +3402,219 @@ footer {
     .meet-leader-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 0.75rem !important;
+    }
+}
+
+/* ==========================================================================
+   SHARED UTILITIES (classes referenced in JSX that had no styles)
+   ========================================================================== */
+.section-white-padding {
+    padding: 3rem 0 4rem;
+}
+
+.section-label.centered-label {
+    justify-content: center;
+}
+
+/* The section already provides top spacing; avoid doubling it once columns stack */
+@media (max-width: 991px) {
+    .section-white-padding .two-col {
+        padding-top: 0 !important;
+    }
+}
+
+/* Bebas Neue has no lowercase, which turned "NaCN" into "NACN" */
+.chem-formula {
+    font-family: var(--heading-font);
+    font-weight: 700;
+}
+
+.chem-formula sub,
+.segment-pill sub {
+    font-size: 0.6em;
+    line-height: 0;
+}
+
+.cta-btn {
+    text-decoration: none;
+}
+
+/* Keep the ">" marker on the first line when a footer link wraps */
+.footer-col ul li {
+    align-items: baseline;
+}
+
+/* ==========================================================================
+   MOBILE LAYOUT PASS (max-width: 767px)
+   Kept last so it wins over the earlier scattered breakpoint rules.
+   ========================================================================== */
+@media (max-width: 767px) {
+    /* Header & page offset */
+    #nav {
+        padding: 1rem 0;
+    }
+    #nav.scrolled {
+        padding: 0.7rem 0;
+    }
+    .page {
+        padding-top: 5rem;
+    }
+    .inner-header {
+        padding: 1.75rem 0;
+    }
+    .section-white-padding {
+        padding: 2rem 0 3rem;
+    }
+
+    /* Home hero */
+    .hero-right-column {
+        height: 240px !important;
+        min-height: 240px !important;
+    }
+    .hero-crops-cutout {
+        width: 210px;
+        height: 150px;
+        border-top-left-radius: 130px 100px;
+    }
+    .hero-left-column {
+        padding: 2rem 1.25rem 2.5rem !important;
+    }
+    .hero-product-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem 1rem !important;
+    }
+
+    /* Dark trust bar: 2 columns, last item centred across both */
+    .bottom-bar-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.25rem 1rem !important;
+        padding: 0 !important;
+    }
+    .bottom-bar-col,
+    .bottom-bar-col:last-child {
+        border: none !important;
+        padding: 0 !important;
+        align-items: flex-start;
+    }
+    .bottom-bar-col:last-child {
+        grid-column: 1 / -1;
+    }
+    .bottom-bar-title,
+    .bottom-bar-sub {
+        font-size: 0.74rem;
+    }
+
+    /* Home sections */
+    #about-section {
+        padding: 2.5rem 0 3rem;
+    }
+    .about-visual {
+        min-height: 320px;
+        padding: 1.25rem;
+    }
+    .about-card-deco {
+        padding: 1.25rem 1rem;
+    }
+    .about-card-deco h3 {
+        font-size: 2.2rem;
+    }
+    #segments {
+        padding: 3rem 0 3.5rem;
+    }
+    .segments-header {
+        margin-bottom: 2rem;
+    }
+    .verticals-bottom-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem 1rem !important;
+        padding: 0 1.25rem !important;
+    }
+    .verticals-bottom-col {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .verticals-bottom-title,
+    .verticals-bottom-sub {
+        font-size: 0.74rem;
+    }
+
+    /* Minerals: 2-up cards, odd last card spans the row */
+    .minerals-row-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .minerals-row-grid > :last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+
+    /* Header text sits over the photo once the layout narrows — strengthen the wash */
+    .agro-theme .inner-header {
+        background-image: linear-gradient(rgba(226, 236, 229, 0.9), rgba(226, 236, 229, 0.82)), url('/Agro-header.webp') !important;
+        background-position: center !important;
+    }
+    .minerals-theme .inner-header {
+        background-image: linear-gradient(rgba(243, 236, 230, 0.9), rgba(243, 236, 230, 0.8)), url('/Copper.webp') !important;
+        background-position: center !important;
+    }
+
+    /* Agro: compact 2-up cards, stacked banner */
+    .agro-solutions-row {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .agro-solutions-row > :last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+    .agro-solution-card {
+        min-height: 0;
+        padding: 1.5rem 0.85rem;
+    }
+    .agro-solution-circle {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 0.85rem;
+    }
+    .agro-bottom-banner {
+        padding: 1.5rem 1.25rem;
+    }
+    .agro-bottom-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.85rem;
+    }
+
+    /* Contact */
+    .contact-theme #contact-section {
+        padding: 2.5rem 0 3rem !important;
+        min-height: 0;
+    }
+    .contact-main-title {
+        font-size: 2rem;
+    }
+    .contact-form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    /* 16px+ stops iOS Safari zooming the page when a field is focused */
+    .contact-form-card input,
+    .contact-form-card select,
+    .contact-form-card textarea {
+        font-size: 16px;
+    }
+
+    /* Footer: brand and contact full width, link columns side by side */
+    footer {
+        padding: 3rem 0 2rem;
+    }
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 1.25rem;
+        margin-bottom: 2.5rem;
+    }
+    .footer-brand,
+    .footer-col:last-child {
+        grid-column: 1 / -1;
+    }
+    .footer-col ul li a {
+        padding: 0.2rem 0;
     }
 }

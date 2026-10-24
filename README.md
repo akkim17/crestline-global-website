@@ -11,7 +11,7 @@ This repository contains the source code for the official website of **Crestline
 * **Icons:** [Lucide React](https://lucide.dev/)
 * **Email Service:** [Resend API](https://resend.com/) (`/api/contact` API Route)
 * **Styling:** Custom CSS Design System with dark glassmorphism aesthetic (`app/globals.css`)
-* **Static Export Ready:** Configured with `output: 'export'` in `next.config.js`
+* **Hosting:** Vercel — pages are prerendered statically; `/api/contact` runs as a Serverless Function
 
 ---
 
@@ -31,6 +31,8 @@ This repository contains the source code for the official website of **Crestline
 │   ├── globals.css             # Design tokens, CSS variables, & responsive breakpoints
 │   ├── layout.js               # Root layout, fonts (Barlow, Bebas Neue), Navbar & Footer
 │   └── page.js                 # Home page
+├── lib/
+│   └── site.js                 # Company contact details & canonical domain (single source of truth)
 ├── components/                 # Reusable UI components
 │   ├── ContactForm.js          # Interactive procurement intake form
 │   ├── Footer.js               # Global footer component
@@ -63,11 +65,8 @@ It uses **[Resend](https://resend.com)** (`resend` NPM package) to send structur
    ```
 4. **Domain Verification (Important for Production):**
    - On the Resend free sandbox tier, emails are sent from `onboarding@resend.dev` to your registered account email.
-   - For live deployment with your company email (e.g. `info@crestlineglobalfzc.com`), navigate to **Resend Dashboard -> Domains**, add your domain (`crestlineglobalfzc.com`), update DNS records (DKIM/SPF), and update line 42 in `app/api/contact/route.js`:
-     ```javascript
-     from: 'Crestline Global Intake <inbound@crestlineglobalfzc.com>'
-     to: 'info@crestlineglobalfzc.com'
-     ```
+   - For live deployment with your company email, navigate to **Resend Dashboard -> Domains**, add your domain (`crestlineglobalfzc.com`) and update DNS records (DKIM/SPF). The sender is set in `app/api/contact/route.js` (`from: 'Crestline Inquiries <inbound@crestlineglobalfzc.com>'`); the recipient is `site.email` in `lib/site.js`.
+   - If Resend rejects a send (bad key, unverified domain), the form shows an error instead of a false success — check the Vercel function logs.
 
 *Note: If `RESEND_API_KEY` is omitted during local development, the API route runs in **simulation mode**, logging the inquiry to the console and returning a success state without crashing.*
 
@@ -97,16 +96,16 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 npm run lint
 ```
 
-### 5. Production Static Build
+### 5. Production Build
 ```bash
 npm run build
 ```
-This generates the optimized static build output in the `out/` directory.
 
 ### 6. Preview Production Build
 ```bash
 npm run start
 ```
+Serves the production build at [http://localhost:3000](http://localhost:3000), including the `/api/contact` route.
 
 ---
 
@@ -122,8 +121,16 @@ npm run start
 
 ---
 
+## ✏️ Editing Content
+
+* **Contact details** (email, phone, LinkedIn, address) and the canonical domain live in `lib/site.js`. Phone/WhatsApp and LinkedIn are hidden on the site while their value is `null`.
+* **Page copy** is written directly in each `app/<page>/page.js` file.
+* **Images** in `public/` are served as-is (image optimization is disabled), so export them web-sized — WebP, roughly 1200–1920px wide for banners and 800px for cards.
+
+---
+
 ## 📜 Legal & Corporate Information
 
 * **Entity:** Crestline Global FZC LLC
 * **Location:** Ajman Free Zone, Ajman, United Arab Emirates
-* **Contact:** info@crestlineglobalfzc.com | +971 50 123 4567
+* **Contact:** info@crestlineglobalfzc.com

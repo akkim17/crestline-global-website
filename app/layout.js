@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import { site, phoneDigits } from "@/lib/site";
 
 const barlow = Barlow({
   subsets: ["latin"],
@@ -27,19 +28,19 @@ const bebasNeue = Bebas_Neue({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://crestlineglobalfzc.com"),
+  metadataBase: new URL(site.url),
   title: {
     default: "Crestline Global FZC LLC | UAE Commodity Trading & Logistics (Dubai & Middle East)",
     template: "%s | Crestline Global FZC LLC",
   },
-  description: "Crestline Global FZC LLC is a premier UAE-registered commodity trading network based in Ajman Free Zone. Supplying Mining Chemicals, Grade A 99.99% Copper Cathodes, NPK Agro Solutions, and Trade Logistics across Dubai, GCC, Middle East, Africa, and Asia.",
+  description: "Crestline Global FZC LLC is a premier UAE-registered commodity trading network based in Ajman Free Zone. Supplying Mining Chemicals, Grade A 99.99% Copper Cathodes, Agro Solutions (SRT Bio Capsules), and Trade Logistics across Dubai, GCC, Middle East, Africa, and Asia.",
   keywords: [
     "Crestline Global FZC LLC",
     "Dubai commodity trading company",
     "UAE mining chemicals supplier",
     "Copper Cathodes 99.99% LME Dubai",
     "Middle East industrial chemicals distributor",
-    "NPK fertilizers Dubai UAE",
+    "SRT Bio Capsules Africa",
     "GCC trade services",
     "Ajman Free Zone trading firm",
     "Africa Middle East logistics trading",
@@ -62,13 +63,13 @@ export const metadata = {
   openGraph: {
     title: "Crestline Global FZC LLC | UAE Commodity Trading & Logistics Network",
     description: "UAE-registered international commodity trading house in Ajman Free Zone. Connecting global suppliers and Middle East / Dubai buyers across Mining Chemicals, Copper Cathodes, Agro Solutions, and Trade Services.",
-    url: "https://crestlineglobalfzc.com",
+    url: site.url,
     siteName: "Crestline Global FZC LLC",
     locale: "en_AE",
     type: "website",
     images: [
       {
-        url: "/Banner.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Crestline Global FZC LLC - Global Commodity & Trade Services Network",
@@ -79,7 +80,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Crestline Global FZC LLC | UAE Commodity Trading & Logistics",
     description: "UAE-registered commodity trading house specializing in Mining Chemicals, Copper Cathodes 99.99%, Agro Solutions, and Trade Services.",
-    images: ["/Banner.png"],
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -99,8 +100,8 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "Corporation",
     "name": "Crestline Global FZC LLC",
-    "url": "https://crestlineglobalfzc.com",
-    "logo": "https://crestlineglobalfzc.com/Banner.png",
+    "url": site.url,
+    "logo": `${site.url}/logo.png`,
     "description": "UAE-registered international commodity trading house specializing in Mining Chemicals, Grade A 99.99% Copper Cathodes, Agro Solutions, and Trade Services.",
     "address": {
       "@type": "PostalAddress",
@@ -108,14 +109,15 @@ export default function RootLayout({ children }) {
       "addressLocality": "Ajman",
       "addressCountry": "AE"
     },
-    "telephone": "+971501234567",
-    "email": "info@crestlineglobalfzc.com",
+    ...(phoneDigits && { "telephone": `+${phoneDigits}` }),
+    "email": site.email,
+    ...(site.linkedin && { "sameAs": [site.linkedin] }),
     "areaServed": ["United Arab Emirates", "Dubai", "Ajman", "GCC", "Middle East", "Africa", "Asia"],
     "knowsAbout": [
       "Mining Chemicals & Flotation Reagents",
       "Electrolytic Copper Cathodes Grade A 99.99%",
       "Copper Concentrates & Base Metals",
-      "Agro Fertilizers NPK & Urea",
+      "Agricultural Bio Inputs (SRT Bio Capsules)",
       "Global Sourcing & Port Inspection Services"
     ]
   };

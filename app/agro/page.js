@@ -10,8 +10,8 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Agro Solutions & NPK Fertilizers | Crestline Global FZC LLC (Dubai & GCC)",
-  description: "Distributing high-grade NPK fertilizers, Urea 46% N, soil nutrients, and bio-agriculture inputs across GCC, Middle East, Africa, and international farming markets.",
+  title: "Agro Solutions & SRT Bio Capsules | Crestline Global FZC LLC (UAE & Africa)",
+  description: "Distributing SRT Bio Capsules and sustainable agricultural inputs that improve soil health, water efficiency, and crop productivity across Africa, the GCC, and international farming markets.",
   alternates: {
     canonical: "/agro",
   },

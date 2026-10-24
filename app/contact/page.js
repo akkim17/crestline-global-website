@@ -1,5 +1,6 @@
 import ContactForm from "@/components/ContactForm";
 import { MapPin, Mail, MessageCircle } from "lucide-react";
+import { site, whatsappUrl } from "@/lib/site";
 
 export const metadata = {
   title: "Procurement Desk & Contact Us | Crestline Global FZC LLC (Ajman & Dubai, UAE)",
@@ -50,18 +51,20 @@ export default function ContactPage() {
                   <div className="contact-card-content">
                     <h4>OFFICIAL EMAIL</h4>
                     <p>
-                      <a href="mailto:info@crestlineglobalfzc.com">info@crestlineglobalfzc.com</a>
+                      <a href={`mailto:${site.email}`}>{site.email}</a>
                     </p>
                   </div>
                 </div>
               </div>
 
               {/* WhatsApp Button */}
-              <div>
-                <a href="https://wa.me/971501234567" className="contact-wa-btn" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle size={18} /> Connect On WhatsApp
-                </a>
-              </div>
+              {whatsappUrl && (
+                <div>
+                  <a href={whatsappUrl} className="contact-wa-btn" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle size={18} /> Connect On WhatsApp
+                  </a>
+                </div>
+              )}
             </div>
 
             {/* Right Column: Contact form container */}
